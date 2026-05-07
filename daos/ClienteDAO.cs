@@ -1,6 +1,7 @@
 ﻿using crud_in_terminal_csharp.model;
 
 using System;
+using System.Text.Json;
 
 namespace crud_in_terminal_csharp.daos {
     class ClienteDAO {
@@ -24,17 +25,41 @@ namespace crud_in_terminal_csharp.daos {
         }
 
         public static void Atualizar(Cliente obj) {
-            for (int i = 0; i < objetos.Count; i++) {
-                if (objetos[i].Id == obj.Id) {
-                    objetos[i] = obj;
-                }
+            Cliente? c = ClienteDAO.Listar_Id(obj.Id);
+            if (c != null) {
+                ClienteDAO.objetos.Remove(c);
+                ClienteDAO.objetos.Add(obj);
+                ClienteDAO.Salvar();
             }
         }
 
+
         public static void Excluir(Cliente obj) {
-            for (int i = 0; i < objetos.Count; i++) {
-                if (objetos[i].Id == obj.Id) {
-                    objetos.RemoveAt(i);
+            Cliente? c = ClienteDAO.Listar_Id(obj.Id);
+            if (c != null) {
+                ClienteDAO.objetos.Remove(c);
+                ClienteDAO.Salvar();
+            }
+        }
+
+        public static void Salvar() {
+            string jsonString = JsonSerializer.Serialize(ClienteDAO.objetos, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText("cliente.json", jsonString);
+        }
+
+
+
+        public static void Abrir() {
+            ClienteDAO.objetos.Clear();
+
+            if (File.Exists("cliente.json")) {
+                string jsonString = File.ReadAllText("cliente.json");
+
+                var itens = JsonSerializer.Deserialize<List<Cliente>>(jsonString);
+
+                if (itens != null) {
+                    ClienteDAO.objetos.AddRange(itens);
                 }
             }
         }

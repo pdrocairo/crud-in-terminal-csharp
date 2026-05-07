@@ -4,18 +4,18 @@ using System.Text;
 
 namespace crud_in_terminal_csharp.model {
     class Categoria {
+        private static int proximoId = 1;
         private int id;
-        private int descricao;
+        private string descricao;
 
-
-        public Categoria(int id, int descricao) {
+       
+        public Categoria(string descricao) {
+            this.id = proximoId++;
             this.Descricao = descricao;
-            this.Id = id;
-
         }
 
-        public int Id { get => id; set => id = value; }
-        public int Descricao { get => descricao; set => descricao = value; }
+        public int Id { get => id; }
+        public string Descricao { get => descricao; set => descricao = value; }
 
         public override string ToString() {
             return $"ID: {Id} | Descricao: {Descricao}";

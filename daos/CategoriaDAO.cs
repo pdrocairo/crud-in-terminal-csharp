@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
+using System.IO;
 
 namespace crud_in_terminal_csharp.daos {
     internal class CategoriaDAO {
@@ -25,17 +27,41 @@ namespace crud_in_terminal_csharp.daos {
         }
 
         public static void Atualizar(Categoria obj) {
-            for (int i = 0; i < objetos.Count; i++) {
-                if (objetos[i].Id == obj.Id) {
-                    objetos[i] = obj;
-                }
+            Categoria? c = CategoriaDAO.Listar_Id(obj.Id);
+            if (c != null) {
+                CategoriaDAO.objetos.Remove(c);
+                CategoriaDAO.objetos.Add(obj);
+                CategoriaDAO.Salvar();
             }
         }
 
+
         public static void Excluir(Categoria obj) {
-            for (int i = 0; i < objetos.Count; i++) {
-                if (objetos[i].Id == obj.Id) {
-                    objetos.RemoveAt(i);
+            Categoria? c = CategoriaDAO.Listar_Id(obj.Id);
+            if (c != null) {
+                CategoriaDAO.objetos.Remove(c);
+                CategoriaDAO.Salvar();
+            }
+        }
+
+        public static void Salvar() {
+            string jsonString = JsonSerializer.Serialize(CategoriaDAO.objetos, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText("categoria.json", jsonString);
+        }
+
+
+
+        public static void Abrir() {
+            CategoriaDAO.objetos.Clear();
+
+            if (File.Exists("categoria.json")) {
+                string jsonString = File.ReadAllText("categoria.json");
+
+                var itens = JsonSerializer.Deserialize<List<Categoria>>(jsonString);
+
+                if (itens != null) {
+                    CategoriaDAO.objetos.AddRange(itens);
                 }
             }
         }

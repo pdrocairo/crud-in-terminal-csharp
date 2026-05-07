@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 
 namespace crud_in_terminal_csharp.daos {
     internal class VendaItemDAO {
@@ -25,17 +26,39 @@ namespace crud_in_terminal_csharp.daos {
         }
 
         public static void Atualizar(VendaItem obj) {
-            for (int i = 0; i < objetos.Count; i++) {
-                if (objetos[i].Id == obj.Id) {
-                    objetos[i] = obj;
-                }
+            VendaItem? c = VendaItemDAO.Listar_Id(obj.Id);
+            if (c != null) {
+                VendaItemDAO.objetos.Remove(c);
+                VendaItemDAO.objetos.Add(obj);
+                VendaItemDAO.Salvar();
             }
         }
 
+
         public static void Excluir(VendaItem obj) {
-            for (int i = 0; i < objetos.Count; i++) {
-                if (objetos[i].Id == obj.Id) {
-                    objetos.RemoveAt(i);
+            VendaItem? c = VendaItemDAO.Listar_Id(obj.Id);
+            if (c != null) {
+                VendaItemDAO.objetos.Remove(c);
+                VendaItemDAO.Salvar();
+            }
+        }
+
+        public static void Salvar() {
+            string jsonString = JsonSerializer.Serialize(VendaItemDAO.objetos, new JsonSerializerOptions { WriteIndented = true });
+
+            File.WriteAllText("vendaitem.json", jsonString);
+        }
+
+        public static void Abrir() {
+            VendaItemDAO.objetos.Clear();
+
+            if (File.Exists("vendaitem.json")) {
+                string jsonString = File.ReadAllText("vendaitem.json");
+
+                var itens = JsonSerializer.Deserialize<List<VendaItem>>(jsonString);
+
+                if (itens != null) {
+                    VendaItemDAO.objetos.AddRange(itens);
                 }
             }
         }

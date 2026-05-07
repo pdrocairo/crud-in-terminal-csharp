@@ -4,22 +4,22 @@ using System.Text;
 
 namespace crud_in_terminal_csharp.model {
     class Produto {
+        private static int proximoId = 1;
         private int id;
         private string descricao;
         private double preco;
         private int estoque;
         private int idCategoria;
 
-
-        public Produto(int id, string descricao, double preco, int estoque, int idCategoria) {
-            this.Id = id;
+        public Produto(string descricao, double preco, int estoque, int idCategoria) {
+            this.id = proximoId++;
             this.Descricao = descricao;
             this.Preco = preco;
             this.Estoque = estoque;
             this.IdCategoria = idCategoria;
         }
 
-        public int Id { get => id; set => id = value; }
+        public int Id { get => id; }
         public string Descricao { get => descricao; set => descricao = value; }
         public double Preco { get => preco; set => preco = value; }
         public int Estoque { get => estoque; set => estoque = value; }
