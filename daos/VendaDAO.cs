@@ -1,20 +1,21 @@
 ﻿using crud_in_terminal_csharp.model;
-
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace crud_in_terminal_csharp.daos {
-    class ClienteDAO {
-        private static List<Cliente> objetos = new List<Cliente>();
+    internal class VendaDAO {
+        private static List<Venda> objetos = new List<Venda>();
 
-        public static void Inserir(Cliente cliente) {
-            objetos.Add(cliente);
+        public static void Inserir(Venda obj) {
+            objetos.Add(obj);
         }
 
-        public static List<Cliente> Listar() {
+        public static List<Venda> Listar() {
             return objetos;
         }
 
-        public static Cliente? Listar_Id(int id) {
+        public static Venda? Listar_Id(int id) {
             for (int i = 0; i < objetos.Count; i++) {
                 if (objetos[i].Id == id) {
                     return objetos[i];
@@ -23,7 +24,7 @@ namespace crud_in_terminal_csharp.daos {
             return null;
         }
 
-        public static void Atualizar(Cliente obj) {
+        public static void Atualizar(Venda obj) {
             for (int i = 0; i < objetos.Count; i++) {
                 if (objetos[i].Id == obj.Id) {
                     objetos[i] = obj;
@@ -31,7 +32,7 @@ namespace crud_in_terminal_csharp.daos {
             }
         }
 
-        public static void Excluir(Cliente obj) {
+        public static void Excluir(Venda obj) {
             for (int i = 0; i < objetos.Count; i++) {
                 if (objetos[i].Id == obj.Id) {
                     objetos.RemoveAt(i);
@@ -40,4 +41,3 @@ namespace crud_in_terminal_csharp.daos {
         }
     }
 }
-
