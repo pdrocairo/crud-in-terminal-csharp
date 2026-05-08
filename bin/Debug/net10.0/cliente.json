@@ -1,0 +1,30 @@
+[
+  {
+    "Nome": "Pedro Cairo",
+    "Email": "cairo@mail.com",
+    "Fone": "123-323",
+    "Senha": "cairo",
+    "Id": 1
+  },
+  {
+    "Nome": "admin",
+    "Email": "admin",
+    "Fone": "admin",
+    "Senha": "admin",
+    "Id": 2
+  },
+  {
+    "Nome": "hanna@mail.com",
+    "Email": "hanna@mail.com",
+    "Fone": "123-321",
+    "Senha": "123",
+    "Id": 3
+  },
+  {
+    "Nome": "Cairo",
+    "Email": "cairo@mail.com",
+    "Fone": "123-321",
+    "Senha": "123",
+    "Id": 4
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "Quantidade": 10,
+    "Preco": 2.5,
+    "IdVenda": 1,
+    "IdProduto": 1,
+    "Id": 1
+  },
+  {
+    "Quantidade": 3,
+    "Preco": 299,
+    "IdVenda": 2,
+    "IdProduto": 2,
+    "Id": 2
+  },
+  {
+    "Quantidade": 5,
+    "Preco": 299,
+    "IdVenda": 3,
+    "IdProduto": 2,
+    "Id": 3
+  }
+]
