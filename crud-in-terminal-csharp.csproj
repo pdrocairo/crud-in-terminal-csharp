@@ -6,7 +6,6 @@
     <RootNamespace>crud_in_terminal_csharp</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>crud_in_terminal_csharp.model.Program</StartupObject>
   </PropertyGroup>
 
 </Project>
