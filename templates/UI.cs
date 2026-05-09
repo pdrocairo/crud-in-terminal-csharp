@@ -72,7 +72,9 @@ namespace crud_in_terminal_csharp.templates {
             Console.WriteLine("12. Excluir uma Categoria\n");
 
             Console.WriteLine("13. Listar Vendas");
-            Console.WriteLine("14. Sair\n");
+            Console.WriteLine("14. Aplicar Descontos");
+            Console.WriteLine("15. Reajustar Preços");
+            Console.WriteLine("16. Sair\n");
             return LerDados();
         }
 

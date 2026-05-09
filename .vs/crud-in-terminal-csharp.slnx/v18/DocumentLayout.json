@@ -5,22 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\models\\vendaitemdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:models\\vendaitemdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\models\\vendadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:models\\vendadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\models\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:models\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\models\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:models\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,60 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "VendaDAO.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\models\\VendaDAO.cs",
-              "RelativeDocumentMoniker": "models\\VendaDAO.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\models\\VendaDAO.cs",
-              "RelativeToolTip": "models\\VendaDAO.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAmwAsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T06:29:04.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProdutoDAO.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\models\\ProdutoDAO.cs",
-              "RelativeDocumentMoniker": "models\\ProdutoDAO.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\models\\ProdutoDAO.cs",
-              "RelativeToolTip": "models\\ProdutoDAO.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAcwEAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T06:31:18.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VendaItemDAO.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\models\\VendaItemDAO.cs",
-              "RelativeDocumentMoniker": "models\\VendaItemDAO.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\models\\VendaItemDAO.cs",
-              "RelativeToolTip": "models\\VendaItemDAO.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAuwEUAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T06:30:12.113Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ClienteDAO.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\models\\ClienteDAO.cs",
-              "RelativeDocumentMoniker": "models\\ClienteDAO.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\models\\ClienteDAO.cs",
-              "RelativeToolTip": "models\\ClienteDAO.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAUwEQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T06:27:27.979Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"

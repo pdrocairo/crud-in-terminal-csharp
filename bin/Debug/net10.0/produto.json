@@ -1,16 +1,9 @@
 [
   {
-    "Descricao": "Detergente",
-    "Preco": 2.5,
-    "Estoque": 990,
+    "Descricao": "bola de futebol",
+    "Preco": 224.25,
+    "Estoque": 500,
     "IdCategoria": 1,
     "Id": 1
-  },
-  {
-    "Descricao": "Bola de Futebol",
-    "Preco": 299,
-    "Estoque": 492,
-    "IdCategoria": 2,
-    "Id": 2
   }
 ]

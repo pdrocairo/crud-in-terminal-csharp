@@ -294,7 +294,7 @@ namespace crud_in_terminal_csharp.views {
 
         private static void RodarMenuAdmin() {
             string opcao = "";
-            while (opcao != "14") {
+            while (opcao != "16") {
                 opcao = UI.MenuPrincipalAdmin();
 
                 if (opcao == "1") {
@@ -329,7 +329,9 @@ namespace crud_in_terminal_csharp.views {
                     View.ProdutoInserir(dados[0], double.Parse(dados[1]), int.Parse(dados[2]), int.Parse(dados[3]));
                 }
                 else if (opcao == "6") {
-                    foreach (var p in ProdutoDAO.Listar()) UI.ExibirMensagem(p.ToString());
+                    foreach (var p in ProdutoDAO.Listar()) {
+                        UI.ExibirMensagem(p.ToString());
+                            };
                 }
                 else if (opcao == "7") {
                     UI.ExibirMensagem("Digite o ID do produto que você quer atualizar: ");
@@ -402,12 +404,90 @@ namespace crud_in_terminal_csharp.views {
                     }
                 }
                 else if (opcao == "14") {
+                    foreach (var p in ProdutoDAO.Listar()) {
+                        UI.ExibirMensagem(p.ToString());
+                    }
+                    UI.ExibirMensagem("Digite o ID do produto que você quer aplicar um desconto: ");
+                    int id = View.ObterId();
+                    UI.ExibirMensagem("Digite a porcentagem do desconto desejado (0 a 100): ");
+                    double porcentagem = double.Parse(UI.LerDados());
+                    double novoPreco = View.AplicarDesconto(id, porcentagem);
+                    UI.ExibirMensagem($"Desconto Aplicado com sucesso! Novo Preço: {novoPreco:F2}");
+
+                }
+                else if (opcao == "15") {
+                    foreach (var p in ProdutoDAO.Listar()) {
+                        UI.ExibirMensagem(p.ToString());
+                    }
+                    UI.ExibirMensagem("Digite o ID do produto que você quer reajustar o valor: ");
+                    int id = View.ObterId();
+                    UI.ExibirMensagem("Digite a porcentagem do desconto desejado (0 a 100): ");
+                    double porcentagem = double.Parse(UI.LerDados());
+                    UI.ExibirMensagem("Se você deseja subir o valor digite 0, caso seja o contrario digite 1: ");
+                    int alt = int.Parse(UI.LerDados());
+                    double novoPreco = View.ReajustarPreco(id, porcentagem, alt);
+                    UI.ExibirMensagem($"Reajuste Aplicado com sucesso! Novo Preço: {novoPreco:F2}");
+                }
+                else if (opcao == "16") {
                     UI.ExibirMensagem("Saindo..");
+                    
                 }
                 else {
                     UI.ExibirMensagem("Opção inválida.");
                 }
             }
+        }
+        public static double AplicarDesconto(int id, double porcentagem) {
+            if (porcentagem< 0 || porcentagem > 100) {
+                throw new ArgumentOutOfRangeException(nameof(porcentagem), "Porcentagem deve ser entre 0 e 100.");
+                
+            }
+            
+            var produto = ProdutoDAO.Listar_Id(id);
+            if (produto == null) {
+                throw new InvalidOperationException($"Produto com ID {id} não encontrado.");
+            }
+            
+            double novoPreco = produto.Preco - (produto.Preco * (porcentagem / 100));
+            produto.Preco = novoPreco;
+            ProdutoDAO.Atualizar(produto);
+            return novoPreco;
+            
+        }
+
+        public static void Pausar() {
+            Console.WriteLine("\nPressione ENTER para continuar");
+            Console.ReadLine();
+        }
+
+        public static double ReajustarPreco(int id, double porcentagem, int alt) {
+            if (porcentagem < 0 || porcentagem > 100) {
+                throw new ArgumentOutOfRangeException(nameof(porcentagem), "Porcentagem deve ser entre 0 e 100.");
+
+            }
+
+            if (alt < 0 || alt > 1) {
+                throw new ArgumentOutOfRangeException(nameof(alt), "Valor deve ser 0 ou 1.");
+
+            }
+            var produto = ProdutoDAO.Listar_Id(id);
+            if (produto == null) {
+                throw new InvalidOperationException($"Produto com ID {id} não encontrado.");
+            }
+            double novoPreco = 0;
+            if (alt == 0) {
+                novoPreco = produto.Preco + (produto.Preco * (porcentagem / 100));
+                produto.Preco = novoPreco;
+            } else {
+                novoPreco = produto.Preco - (produto.Preco * (porcentagem / 100));
+                produto.Preco = novoPreco;
+            }
+
+         
+            ProdutoDAO.Atualizar(produto);
+            return novoPreco;
+
+
         }
     }
 }

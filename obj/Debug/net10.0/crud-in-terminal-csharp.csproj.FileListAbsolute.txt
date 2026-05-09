@@ -12,3 +12,4 @@ D:\crud-in-terminal-csharp\obj\Debug\net10.0\refint\crud-in-terminal-csharp.dll
 D:\crud-in-terminal-csharp\obj\Debug\net10.0\crud-in-terminal-csharp.pdb
 D:\crud-in-terminal-csharp\obj\Debug\net10.0\crud-in-terminal-csharp.genruntimeconfig.cache
 D:\crud-in-terminal-csharp\obj\Debug\net10.0\ref\crud-in-terminal-csharp.dll
+D:\crud-in-terminal-csharp\obj\Debug\net10.0\crud-in-terminal-csharp.sourcelink.json

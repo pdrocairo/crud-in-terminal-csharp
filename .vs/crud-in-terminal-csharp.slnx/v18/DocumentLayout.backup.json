@@ -5,30 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\models\\vendaitemdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:models\\vendaitemdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\views\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:views\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\models\\vendadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:models\\vendadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\templates\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:templates\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\models\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:models\\produtodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\models\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:models\\clientedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,60 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VendaDAO.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\models\\VendaDAO.cs",
-              "RelativeDocumentMoniker": "models\\VendaDAO.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\models\\VendaDAO.cs*",
-              "RelativeToolTip": "models\\VendaDAO.cs*",
-              "ViewState": "AgIAADAAAAAAAAAAAAAmwAsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T06:29:04.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProdutoDAO.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\models\\ProdutoDAO.cs",
-              "RelativeDocumentMoniker": "models\\ProdutoDAO.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\models\\ProdutoDAO.cs",
-              "RelativeToolTip": "models\\ProdutoDAO.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAcwEAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T06:31:18.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VendaItemDAO.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\models\\VendaItemDAO.cs",
-              "RelativeDocumentMoniker": "models\\VendaItemDAO.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\models\\VendaItemDAO.cs",
-              "RelativeToolTip": "models\\VendaItemDAO.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAuwEUAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T06:30:12.113Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClienteDAO.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\models\\ClienteDAO.cs",
-              "RelativeDocumentMoniker": "models\\ClienteDAO.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\models\\ClienteDAO.cs",
-              "RelativeToolTip": "models\\ClienteDAO.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAUwEQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T06:27:27.979Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -116,77 +40,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\crud-in-terminal-csharp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-08T05:54:39.956Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "f160f975-94b5-491f-a45c-2ec74b12320a",
-        "Display": 0,
-        "X": 902,
-        "Y": 202,
-        "Width": 1314,
-        "Height": 670,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UI.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\templates\\UI.cs",
-              "RelativeDocumentMoniker": "templates\\UI.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\templates\\UI.cs",
-              "RelativeToolTip": "templates\\UI.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowDQAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T05:34:52.77Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "766c1e07-82a6-4734-af83-3fafa9871739",
-        "Display": 0,
-        "X": 289,
-        "Y": 96,
-        "Width": 556,
-        "Height": 777,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "View.cs",
-              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\views\\View.cs",
-              "RelativeDocumentMoniker": "views\\View.cs",
-              "ToolTip": "D:\\crud-in-terminal-csharp\\views\\View.cs",
-              "RelativeToolTip": "views\\View.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-08T05:18:23Z",
               "EditorCaption": ""
             }
           ]
