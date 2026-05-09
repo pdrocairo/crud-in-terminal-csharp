@@ -131,62 +131,80 @@ namespace crud_in_terminal_csharp.views {
                     string? tipoDeUsuario = AutenticarLogin(login.email, login.senha);
                     if (tipoDeUsuario == "admin") RodarMenuAdmin();
                     else if (tipoDeUsuario == "cliente") {
-                       
+
                         Cliente? cli = null;
                         foreach (var c in ClienteDAO.Listar()) {
                             if (c.Email == login.email) { cli = c; break; }
                         }
                         if (cli != null) RodarMenuCliente(cli.Id);
-                        else UI.ExibirMensagem("Erro ao localizar cliente.");
+                        else {
+                            UI.ExibirMensagem("Erro ao localizar cliente.");
+                            Pausar();
+                        }
                     }
-                    else UI.ExibirMensagem("Usuário ou senha inválidos.");
+                    else {
+                        UI.ExibirMensagem("Usuário ou senha inválidos.");
+                        Pausar();
+                    }
                 }
                 else if (opcao == "2") {
                     UI.MenuCriarConta();
                     UI.ExibirMensagem("Conta criada com sucesso.");
+                    Pausar();
                 }
                 else if (opcao == "3") {
                     UI.ExibirMensagem("Saindo...");
                 }
                 else {
                     UI.ExibirMensagem("Opção inválida.");
+                    Pausar();
                 }
             }
         }
 
-       
+
         private static void RodarMenuCliente(int clienteId) {
             string opcao = "";
             while (opcao != "6") {
                 opcao = UI.MenuPrincipalCliente();
 
                 if (opcao == "1") {
-                    
-                    foreach (var p in ProdutoDAO.Listar()) UI.ExibirMensagem(p.ToString());
+
+                    var produtos = ProdutoDAO.Listar();
+                    foreach (var p in produtos) {
+                        UI.ExibirMensagem(p.ToString());
+                    }
+                    Pausar();
                 }
                 else if (opcao == "2") {
-                    
+
                     UI.ExibirMensagem("Produtos disponíveis:");
-                    foreach (var p in ProdutoDAO.Listar()) UI.ExibirMensagem(p.ToString());
+                    var produtos = ProdutoDAO.Listar();
+                    foreach (var p in produtos) {
+                        UI.ExibirMensagem(p.ToString());
+                    }
+                    Pausar();
 
                     UI.ExibirMensagem("Digite o ID do produto que quer adicionar: ");
                     int idProduto = ObterId();
                     Produto? produto = ProdutoDAO.Listar_Id(idProduto);
-                    if (produto == null) { UI.ExibirMensagem("Produto não encontrado."); continue; }
+                    if (produto == null) { UI.ExibirMensagem("Produto não encontrado."); Pausar(); continue; }
 
                     UI.ExibirMensagem("Digite a quantidade: ");
                     int quantidade = 0;
                     if (!int.TryParse(Console.ReadLine(), out quantidade) || quantidade <= 0) {
                         UI.ExibirMensagem("Quantidade inválida.");
+                        Pausar();
                         continue;
                     }
 
                     if (produto.Estoque < quantidade) {
                         UI.ExibirMensagem($"Estoque insuficiente. Disponível: {produto.Estoque}");
+                        Pausar();
                         continue;
                     }
 
-                    
+
                     Venda? carrinho = null;
                     foreach (var v in VendaDAO.Listar()) {
                         if (v.IdCliente == clienteId && v.Carrinho) { carrinho = v; break; }
@@ -197,7 +215,7 @@ namespace crud_in_terminal_csharp.views {
                         VendaDAO.Salvar();
                     }
 
-                   
+
                     VendaItem item = new VendaItem(quantidade, produto.Preco, carrinho.Id, produto.Id);
                     VendaItemDAO.Inserir(item);
                     VendaItemDAO.Salvar();
@@ -206,14 +224,15 @@ namespace crud_in_terminal_csharp.views {
                     ProdutoDAO.Atualizar(produto);
 
                     UI.ExibirMensagem("Produto adicionado ao carrinho.");
+                    Pausar();
                 }
                 else if (opcao == "3") {
-                    
+
                     Venda? carrinho = null;
                     foreach (var v in VendaDAO.Listar()) {
                         if (v.IdCliente == clienteId && v.Carrinho) { carrinho = v; break; }
                     }
-                    if (carrinho == null) { UI.ExibirMensagem("Carrinho vazio."); continue; }
+                    if (carrinho == null) { UI.ExibirMensagem("Carrinho vazio."); Pausar(); continue; }
 
                     double totalCalc = 0;
                     bool temItens = false;
@@ -229,14 +248,15 @@ namespace crud_in_terminal_csharp.views {
                     }
                     if (!temItens) UI.ExibirMensagem("  (sem itens)");
                     UI.ExibirMensagem($"Total atual: {totalCalc:F2}");
+                    Pausar();
                 }
                 else if (opcao == "4") {
-                    
+
                     Venda? carrinho = null;
                     foreach (var v in VendaDAO.Listar()) {
                         if (v.IdCliente == clienteId && v.Carrinho) { carrinho = v; break; }
                     }
-                    if (carrinho == null) { UI.ExibirMensagem("Carrinho vazio."); continue; }
+                    if (carrinho == null) { UI.ExibirMensagem("Carrinho vazio."); Pausar(); continue; }
 
                     double totalCalc = 0;
                     bool temItens = false;
@@ -245,16 +265,17 @@ namespace crud_in_terminal_csharp.views {
                         temItens = true;
                         totalCalc += item.Preco * item.Quantidade;
                     }
-                    if (!temItens) { UI.ExibirMensagem("Carrinho sem itens."); continue; }
+                    if (!temItens) { UI.ExibirMensagem("Carrinho sem itens."); Pausar(); continue; }
 
-                    
+
                     carrinho.Total = totalCalc;
                     carrinho.Carrinho = false;
                     VendaDAO.Atualizar(carrinho);
                     UI.ExibirMensagem($"Compra finalizada. Total: {totalCalc:F2}");
+                    Pausar();
                 }
                 else if (opcao == "5") {
-                    
+
                     var vendas = VendaDAO.Listar();
                     bool tem = false;
                     foreach (var venda in vendas) {
@@ -278,12 +299,14 @@ namespace crud_in_terminal_csharp.views {
                         UI.ExibirMensagem("");
                     }
                     if (!tem) UI.ExibirMensagem("Nenhuma venda encontrada.");
+                    Pausar();
                 }
                 else if (opcao == "6") {
                     UI.ExibirMensagem("Voltando...");
                 }
                 else {
                     UI.ExibirMensagem("Opção inválida.");
+                    Pausar();
                 }
             }
         }
@@ -301,9 +324,15 @@ namespace crud_in_terminal_csharp.views {
                     UI.ExibirMensagem("Digite o nome, email, telefone e senha (cada um em uma linha): ");
                     var dados = UI.ObterDadosCliente();
                     View.ClienteInserir(dados[0], dados[1], dados[2], dados[3]);
+                    UI.ExibirMensagem("Cliente criado com sucesso.");
+                    Pausar();
                 }
                 else if (opcao == "2") {
-                    foreach (var c in ClienteDAO.Listar()) UI.ExibirMensagem(c.ToString());
+                    var clientes = ClienteDAO.Listar();
+                    foreach (var c in clientes) {
+                        UI.ExibirMensagem(c.ToString());
+                    }
+                    Pausar();
                 }
                 else if (opcao == "3") {
                     UI.ExibirMensagem("Digite o ID do cliente que você quer atualizar: ");
@@ -313,6 +342,12 @@ namespace crud_in_terminal_csharp.views {
                         UI.ExibirMensagem("Digite novo nome, email, telefone e senha (cada um em uma linha): ");
                         var dados = UI.ObterDadosCliente();
                         View.ClienteAtualizar(id, dados[0], dados[1], dados[2], dados[3]);
+                        UI.ExibirMensagem("Cliente atualizado com sucesso.");
+                        Pausar();
+                    }
+                    else {
+                        UI.ExibirMensagem("Cliente não encontrado.");
+                        Pausar();
                     }
                 }
                 else if (opcao == "4") {
@@ -321,17 +356,27 @@ namespace crud_in_terminal_csharp.views {
                     Cliente cliente = ClienteDAO.Listar_Id(id);
                     if (cliente != null) {
                         View.ClienteExcluir(id);
+                        UI.ExibirMensagem("Cliente excluído com sucesso.");
+                        Pausar();
+                    }
+                    else {
+                        UI.ExibirMensagem("Cliente não encontrado.");
+                        Pausar();
                     }
                 }
                 else if (opcao == "5") {
                     UI.ExibirMensagem("Digite descricao, preco, estoque e idCategoria (cada um em uma linha): ");
                     var dados = UI.ObterDadosProduto();
                     View.ProdutoInserir(dados[0], double.Parse(dados[1]), int.Parse(dados[2]), int.Parse(dados[3]));
+                    UI.ExibirMensagem("Produto criado com sucesso.");
+                    Pausar();
                 }
                 else if (opcao == "6") {
-                    foreach (var p in ProdutoDAO.Listar()) {
+                    var produtos = ProdutoDAO.Listar();
+                    foreach (var p in produtos) {
                         UI.ExibirMensagem(p.ToString());
-                            };
+                    }
+                    Pausar();
                 }
                 else if (opcao == "7") {
                     UI.ExibirMensagem("Digite o ID do produto que você quer atualizar: ");
@@ -341,6 +386,12 @@ namespace crud_in_terminal_csharp.views {
                         UI.ExibirMensagem("Digite descricao, preco, estoque e idCategoria (cada um em uma linha): ");
                         var dados = UI.ObterDadosProduto();
                         View.ProdutoAtualizar(id, dados[0], double.Parse(dados[1]), int.Parse(dados[2]), int.Parse(dados[3]));
+                        UI.ExibirMensagem("Produto atualizado com sucesso.");
+                        Pausar();
+                    }
+                    else {
+                        UI.ExibirMensagem("Produto não encontrado.");
+                        Pausar();
                     }
                 }
                 else if (opcao == "8") {
@@ -349,15 +400,25 @@ namespace crud_in_terminal_csharp.views {
                     Produto produto = ProdutoDAO.Listar_Id(id);
                     if (produto != null) {
                         View.ProdutoExcluir(id);
+                        UI.ExibirMensagem("Produto excluído com sucesso.");
+                        Pausar();
+                    }
+                    else {
+                        UI.ExibirMensagem("Produto não encontrado.");
+                        Pausar();
                     }
                 }
                 else if (opcao == "9") {
                     UI.ExibirMensagem("Digite a descricao da Categoria: ");
                     var dados = UI.ObterDadosCategoria();
                     View.CategoriaInserir(dados[0]);
+                    UI.ExibirMensagem("Categoria criada com sucesso.");
+                    Pausar();
                 }
                 else if (opcao == "10") {
-                    foreach (var c in CategoriaDAO.Listar()) UI.ExibirMensagem(c.ToString());
+                    var categorias = CategoriaDAO.Listar();
+                    foreach (var c in categorias) UI.ExibirMensagem(c.ToString());
+                    Pausar();
                 }
                 else if (opcao == "11") {
                     UI.ExibirMensagem("Digite o ID da Categoria que você quer atualizar: ");
@@ -367,6 +428,12 @@ namespace crud_in_terminal_csharp.views {
                         UI.ExibirMensagem("Digite a nova descrição: ");
                         var dados = UI.ObterDadosCategoria();
                         View.CategoriaAtualizar(id, dados[0]);
+                        UI.ExibirMensagem("Categoria atualizada com sucesso.");
+                        Pausar();
+                    }
+                    else {
+                        UI.ExibirMensagem("Categoria não encontrada.");
+                        Pausar();
                     }
                 }
                 else if (opcao == "12") {
@@ -375,6 +442,12 @@ namespace crud_in_terminal_csharp.views {
                     Categoria categoria = CategoriaDAO.Listar_Id(id);
                     if (categoria != null) {
                         View.CategoriaExcluir(id);
+                        UI.ExibirMensagem("Categoria excluída com sucesso.");
+                        Pausar();
+                    }
+                    else {
+                        UI.ExibirMensagem("Categoria não encontrada.");
+                        Pausar();
                     }
                 }
                 else if (opcao == "13") {
@@ -393,7 +466,7 @@ namespace crud_in_terminal_csharp.views {
                             temItens = true;
                             var produto = ProdutoDAO.Listar_Id(item.IdProduto);
                             string prodDescricao = produto != null ? produto.Descricao : $"#{item.IdProduto}";
-                                double subtotal = item.Preco * item.Quantidade;
+                            double subtotal = item.Preco * item.Quantidade;
                             totalCalc += subtotal;
                             UI.ExibirMensagem($"  Item ID:{item.Id} | Produto: {prodDescricao} | Qtd: {item.Quantidade} | Preço: {item.Preco:F2} | Subtotal: {subtotal:F2}");
                         }
@@ -402,23 +475,29 @@ namespace crud_in_terminal_csharp.views {
                         UI.ExibirMensagem($"  Total calculado: {totalCalc:F2}");
                         UI.ExibirMensagem("");
                     }
+                    Pausar();
                 }
                 else if (opcao == "14") {
-                    foreach (var p in ProdutoDAO.Listar()) {
+                    var produtos = ProdutoDAO.Listar();
+                    foreach (var p in produtos) {
                         UI.ExibirMensagem(p.ToString());
                     }
+                    Pausar();
                     UI.ExibirMensagem("Digite o ID do produto que você quer aplicar um desconto: ");
                     int id = View.ObterId();
                     UI.ExibirMensagem("Digite a porcentagem do desconto desejado (0 a 100): ");
                     double porcentagem = double.Parse(UI.LerDados());
                     double novoPreco = View.AplicarDesconto(id, porcentagem);
                     UI.ExibirMensagem($"Desconto Aplicado com sucesso! Novo Preço: {novoPreco:F2}");
+                    Pausar();
 
                 }
                 else if (opcao == "15") {
-                    foreach (var p in ProdutoDAO.Listar()) {
+                    var produtos = ProdutoDAO.Listar();
+                    foreach (var p in produtos) {
                         UI.ExibirMensagem(p.ToString());
                     }
+                    Pausar();
                     UI.ExibirMensagem("Digite o ID do produto que você quer reajustar o valor: ");
                     int id = View.ObterId();
                     UI.ExibirMensagem("Digite a porcentagem do desconto desejado (0 a 100): ");
@@ -427,32 +506,34 @@ namespace crud_in_terminal_csharp.views {
                     int alt = int.Parse(UI.LerDados());
                     double novoPreco = View.ReajustarPreco(id, porcentagem, alt);
                     UI.ExibirMensagem($"Reajuste Aplicado com sucesso! Novo Preço: {novoPreco:F2}");
+                    Pausar();
                 }
                 else if (opcao == "16") {
                     UI.ExibirMensagem("Saindo..");
-                    
+
                 }
                 else {
                     UI.ExibirMensagem("Opção inválida.");
+                    Pausar();
                 }
             }
         }
         public static double AplicarDesconto(int id, double porcentagem) {
-            if (porcentagem< 0 || porcentagem > 100) {
+            if (porcentagem < 0 || porcentagem > 100) {
                 throw new ArgumentOutOfRangeException(nameof(porcentagem), "Porcentagem deve ser entre 0 e 100.");
-                
+
             }
-            
+
             var produto = ProdutoDAO.Listar_Id(id);
             if (produto == null) {
                 throw new InvalidOperationException($"Produto com ID {id} não encontrado.");
             }
-            
+
             double novoPreco = produto.Preco - (produto.Preco * (porcentagem / 100));
             produto.Preco = novoPreco;
             ProdutoDAO.Atualizar(produto);
             return novoPreco;
-            
+
         }
 
         public static void Pausar() {
@@ -478,12 +559,13 @@ namespace crud_in_terminal_csharp.views {
             if (alt == 0) {
                 novoPreco = produto.Preco + (produto.Preco * (porcentagem / 100));
                 produto.Preco = novoPreco;
-            } else {
+            }
+            else {
                 novoPreco = produto.Preco - (produto.Preco * (porcentagem / 100));
                 produto.Preco = novoPreco;
             }
 
-         
+
             ProdutoDAO.Atualizar(produto);
             return novoPreco;
 

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\crud-in-terminal-csharp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\views\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:views\\view.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|d:\\crud-in-terminal-csharp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D6861581-2BBA-84E5-67A6-61C9E63E8C8B}|crud-in-terminal-csharp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "View.cs",
+              "DocumentMoniker": "D:\\crud-in-terminal-csharp\\views\\View.cs",
+              "RelativeDocumentMoniker": "views\\View.cs",
+              "ToolTip": "D:\\crud-in-terminal-csharp\\views\\View.cs",
+              "RelativeToolTip": "views\\View.cs",
+              "ViewState": "AgIAAA0CAAAAAAAAAADwvyICAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-09T03:14:39.232Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -34,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\crud-in-terminal-csharp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
