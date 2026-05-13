@@ -376,10 +376,10 @@ Este projeto está licenciado sob a licença **MIT**. Veja o arquivo [LICENSE](L
 
 ## 👤 Autor
 
-**[Seu Nome]**
+**PEDRO CAIRO BERNARDO DE OLIVEIRA**
 
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- Email: seu.email@example.com
+- GitHub: [@pdrocairo]([https://github.com/seu-usuario](https://github.com/pdrocairo))
+- Email: pedro.cairo21@gmail.com
 
 ---
 
@@ -409,4 +409,4 @@ Se encontrar problemas ou tiver dúvidas, abra uma **Issue** no repositório.
 
 ---
 
-**Última atualização:** Dezembro de 2024
+**Última atualização:** Maio de 2026
