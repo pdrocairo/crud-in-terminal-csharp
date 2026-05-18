@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\crud-in-terminal-csharp\\crud-in-terminal-csharp.csproj": {}
+    "C:\\Users\\cairo-pc\\Documents\\crud-in-terminal-csharp-main\\crud-in-terminal-csharp.csproj": {}
   },
   "projects": {
-    "D:\\crud-in-terminal-csharp\\crud-in-terminal-csharp.csproj": {
+    "C:\\Users\\cairo-pc\\Documents\\crud-in-terminal-csharp-main\\crud-in-terminal-csharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\crud-in-terminal-csharp\\crud-in-terminal-csharp.csproj",
+        "projectUniqueName": "C:\\Users\\cairo-pc\\Documents\\crud-in-terminal-csharp-main\\crud-in-terminal-csharp.csproj",
         "projectName": "crud-in-terminal-csharp",
-        "projectPath": "D:\\crud-in-terminal-csharp\\crud-in-terminal-csharp.csproj",
+        "projectPath": "C:\\Users\\cairo-pc\\Documents\\crud-in-terminal-csharp-main\\crud-in-terminal-csharp.csproj",
         "packagesPath": "C:\\Users\\cairo-pc\\.nuget\\packages\\",
-        "outputPath": "D:\\crud-in-terminal-csharp\\obj\\",
+        "outputPath": "C:\\Users\\cairo-pc\\Documents\\crud-in-terminal-csharp-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cairo-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,7 +41,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

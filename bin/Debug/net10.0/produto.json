@@ -1,8 +1,8 @@
 [
   {
-    "Descricao": "bola de futebol",
-    "Preco": 224.25,
-    "Estoque": 500,
+    "Descricao": "maca",
+    "Preco": 2.5,
+    "Estoque": 30,
     "IdCategoria": 1,
     "Id": 1
   }

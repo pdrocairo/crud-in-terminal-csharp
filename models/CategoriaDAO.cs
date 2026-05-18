@@ -7,6 +7,12 @@ namespace crud_in_terminal_csharp.models {
     internal class CategoriaDAO {
         private static List<Categoria> objetos = new List<Categoria>();
 
+        static CategoriaDAO()
+        {
+            Abrir();
+            AppDomain.CurrentDomain.ProcessExit += (s, e) => Salvar();
+        }
+
         public static void Inserir(Categoria obj) {
             objetos.Add(obj);
         }

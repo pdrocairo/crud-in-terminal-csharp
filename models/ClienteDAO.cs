@@ -7,6 +7,19 @@ namespace crud_in_terminal_csharp.models {
     internal class ClienteDAO {
         public static List<Cliente> objetos = new List<Cliente>();
 
+        static ClienteDAO()
+        {
+            Abrir();
+
+            if (!objetos.Any(c => c.Email == "admin"))
+            {
+                var admin = new Cliente("admin", "admin", "admin", "admin");
+                objetos.Add(admin);
+                Salvar();
+            }
+            AppDomain.CurrentDomain.ProcessExit += (s, e) => Salvar();
+        }
+
         public static void Inserir(Cliente cliente) {
             objetos.Add(cliente);
         }

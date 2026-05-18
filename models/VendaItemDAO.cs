@@ -7,6 +7,12 @@ namespace crud_in_terminal_csharp.models {
     internal class VendaItemDAO {
         private static List<VendaItem> objetos = new List<VendaItem>();
 
+        static VendaItemDAO()
+        {
+            Abrir();
+            AppDomain.CurrentDomain.ProcessExit += (s, e) => Salvar();
+        }
+
         public static void Inserir(VendaItem obj) {
             objetos.Add(obj);
             Salvar();
