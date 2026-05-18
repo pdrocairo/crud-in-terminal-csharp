@@ -74,11 +74,11 @@ Um sistema completo de **CRUD em terminal** desenvolvido em C# com .NET 10, ofer
 
 Diagrama de Casos de Uso:
 
-![Diagrama de Casos de Uso](docs\images\Casos%20de%20Uso.png)
+![Diagrama de Casos de Uso](docs\images\casos-de-uso.png)
 
 Diagrama de Pacotes:
 
-![Diagrama de Pacotes](docs\images\DiagramaPacotes.png)
+![Diagrama de Pacotes](docs\images\diagrama-pacotes.png)
 
 Entidades (modelo de dados):
 
