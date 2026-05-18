@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("crud-in-terminal-csharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a53399f7a15e5c6c47e792db48797cb760ca9a2e")]
 [assembly: System.Reflection.AssemblyProductAttribute("crud-in-terminal-csharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("crud-in-terminal-csharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cairo-pc\\Documents\\crud-in-terminal-csharp-main\\crud-in-terminal-csharp.csproj",
+      "projectUniqueName": "C:\\Users\\cairo-pc\\Documents\\Nova pasta\\crud-in-terminal-csharp\\crud-in-terminal-csharp.csproj",
       "projectName": "crud-in-terminal-csharp",
-      "projectPath": "C:\\Users\\cairo-pc\\Documents\\crud-in-terminal-csharp-main\\crud-in-terminal-csharp.csproj",
+      "projectPath": "C:\\Users\\cairo-pc\\Documents\\Nova pasta\\crud-in-terminal-csharp\\crud-in-terminal-csharp.csproj",
       "packagesPath": "C:\\Users\\cairo-pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cairo-pc\\Documents\\crud-in-terminal-csharp-main\\obj\\",
+      "outputPath": "C:\\Users\\cairo-pc\\Documents\\Nova pasta\\crud-in-terminal-csharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cairo-pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
