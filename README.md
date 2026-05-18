@@ -74,21 +74,21 @@ Um sistema completo de **CRUD em terminal** desenvolvido em C# com .NET 10, ofer
 
 Diagrama de Casos de Uso:
 
-![Diagrama de Casos de Uso](docs\images\casos-de-uso.png)
+![Diagrama de Casos de Uso](docs/images/casos-de-uso.png)
 
 Diagrama de Pacotes:
 
-![Diagrama de Pacotes](docs\images\diagrama-pacotes.png)
+![Diagrama de Pacotes](docs/images/diagrama-pacotes.png)
 
 Entidades (modelo de dados):
 
-![Diagrama de Entidades](docs\images\entidades.png)
+![Diagrama de Entidades](docs/images/entidades.png)
 
 View e UI (fluxo de apresentação):
 
-![View](docs\images\View.png)
+![View](docs/images/View.png)
 
-![UI](docs\images\UI.png)
+![UI](docs/images/UI.png)
 
 ## 📁 Estrutura do Projeto
 
