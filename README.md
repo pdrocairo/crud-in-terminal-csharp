@@ -63,6 +63,33 @@ Um sistema completo de **CRUD em terminal** desenvolvido em C# com .NET 10, ofer
 
 ---
 
+## Estrutura do Projeto
+
+- `Program.cs` - ponto de entrada
+- `models/` - entidades e DAOs
+- `views/` - classes de exibição
+- `templates/` - UI em terminal
+
+## Diagramas
+
+Diagrama de Casos de Uso:
+
+![Diagrama de Casos de Uso](docs\images\Casos%20de%20Uso.png)
+
+Diagrama de Pacotes:
+
+![Diagrama de Pacotes](docs\images\DiagramaPacotes.png)
+
+Entidades (modelo de dados):
+
+![Diagrama de Entidades](docs\images\entidades.png)
+
+View e UI (fluxo de apresentação):
+
+![View](docs\images\View.png)
+
+![UI](docs\images\UI.png)
+
 ## 📁 Estrutura do Projeto
 
 ```
@@ -143,9 +170,7 @@ Senha: admin
 =======TELA INICIAL========
 1. Login
 2. Criar Conta
-3. Sair
-
-Digite sua opção: 
+3. Sair 
 ```
 
 ### 👤 Fluxo de Cliente
@@ -156,13 +181,13 @@ Digite sua opção:
 2. **Login** → Digite email e senha
 3. **Menu Principal do Cliente:**
    ```
-   =========MENU PRINCIPAL=========
-   1. Listar produtos
-   2. Inserir produtos no Carrinho
-   3. Ver Carrinho
-   4. Finalizar Compra
-   5. Meus Pedidos
-   6. Sair
+      =========MENU PRINCIPAL=========
+      1. Listar produtos
+      2. Inserir produtos no Carrinho
+      3. Ver Carrinho
+      4. Finalizar Compra
+      5. Meus Pedidos
+      6. Sair
    ```
 4. **Selecione "2"** → Escolha um produto e quantidade
 5. **Selecione "3"** → Visualize seu carrinho
@@ -186,56 +211,14 @@ Digite sua opção:
 ### Menu Principal do Admin
 
 ```
-1. Adicionar um novo Cliente
-2. Listar Clientes
-3. Atualizar dados de um Cliente
-4. Excluir um Cliente
-
-5. Adicionar um novo Produto
-6. Listar Produtos
-7. Atualizar um Produto
-8. Excluir um Produto
-
-9. Adicionar uma nova Categoria
-10. Listar Categorias
-11. Atualizar uma Categoria
-12. Excluir uma Categoria
-
-13. Listar Vendas
-14. Aplicar Descontos
-15. Reajustar Preços
-16. Sair
-```
-
-### 💼 Exemplos de Uso - Admin
-
-#### Adicionar um novo produto
-```
-1. Selecione opção "5"
-2. Digite: Descrição (ex: "Notebook")
-3. Digite: Preço (ex: "2500.00")
-4. Digite: Estoque (ex: "10")
-5. Digite: ID Categoria (ex: "1")
-6. Produto criado com sucesso!
-```
-
-#### Aplicar desconto
-```
-1. Selecione opção "14"
-2. Produtos serão listados
-3. Digite o ID do produto
-4. Digite a porcentagem de desconto (ex: "10")
-5. Desconto aplicado com sucesso!
-```
-
-#### Reajustar preço
-```
-1. Selecione opção "15"
-2. Produtos serão listados
-3. Digite o ID do produto
-4. Digite a porcentagem (ex: "5")
-5. Digite: 0 para aumentar, 1 para diminuir
-6. Reajuste aplicado com sucesso!
+=========MENU ADMIN=========
+----- Clientes -----
+1. Inserir  2. Listar  3. Atualizar  4. Excluir
+----- Categorias -----
+5. Inserir  6. Listar  7. Atualizar  8. Excluir
+----- Produtos -----
+9. Inserir  10. Listar  11. Atualizar  12. Excluir
+13. Listar Vendas  14. Aplicar Desconto  15. Reajustar Preco  16. Sair
 ```
 
 ---
